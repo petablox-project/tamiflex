@@ -31,6 +31,7 @@ import soot.rtlib.tamiflex.UnexpectedReflectiveCall;
 public class ReflInliner {
 	
 	public static void main(String[] args) {
+                Options.v().set_include_all(true);
 		PackManager.v().getPack("wjpp").add(new Transform("wjpp.inlineReflCalls", new ReflectiveCallsInliner()));		
 		Scene.v().addBasicClass(Object.class.getName());
 		Scene.v().addBasicClass(SootSig.class.getName(),SootClass.BODIES);
